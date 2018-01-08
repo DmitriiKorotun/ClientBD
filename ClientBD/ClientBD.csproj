@@ -54,7 +54,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Authorization.xaml">
+    <Page Include="Forms\AddEditRecord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -62,12 +66,47 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Authorization.xaml.cs">
-      <DependentUpon>Authorization.xaml</DependentUpon>
+    <Compile Include="Forms\AddEditRecord.xaml.cs">
+      <DependentUpon>AddEditRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Forms\MainForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\QuerryForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\QuerryResultsForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authorization\AuthModule.cs" />
+    <Compile Include="Authorization\IAuthModule.cs" />
+    <Compile Include="Encryption\Encryption.cs" />
+    <Compile Include="Forms\MainForm.xaml.cs">
+      <DependentUpon>MainForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QuerryForm.xaml.cs">
+      <DependentUpon>QuerryForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QuerryResultsForm.xaml.cs">
+      <DependentUpon>QuerryResultsForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GetSendDataModule\ClienServerBridge.cs" />
+    <Compile Include="GetSendDataModule\Interfaces\IClientServerBridge.cs" />
+    <Compile Include="GetSendDataModule\Interfaces\IIncomingDataHandler.cs" />
+    <Compile Include="GetSendDataModule\IncomingData.cs" />
+    <Compile Include="GetSendDataModule\IncomingDataHandler.cs" />
+    <Compile Include="GetSendDataModule\Interfaces\IQuerryMaker.cs" />
+    <Compile Include="GetSendDataModule\QuerryMaker.cs" />
+    <Compile Include="GetSendDataModule\OutcomeData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -93,5 +132,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

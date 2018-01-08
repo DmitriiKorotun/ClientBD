@@ -24,5 +24,16 @@ namespace ClientBD
         {
             InitializeComponent();
         }
+
+        private void btn_login_Click(object sender, RoutedEventArgs e)
+        {
+            if (new Authorization.AuthModule().CheckAuthData(tb_login.Text, pb_password.Password))
+            {
+                var mainForm = new Forms.MainForm();
+                mainForm.Show();
+            }
+            else
+                MessageBox.Show("Ошибка авторизации", "Ошибка");
+        }
     }
 }
