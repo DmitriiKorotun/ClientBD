@@ -10,9 +10,9 @@ namespace ClientBD.Authorization
     {
         public bool CheckAuthData(string login, string pass)
         {
+            var reader = new GetSendDataModule.PostgresModules.Postgres();
+            reader.Read("SELECT password FROM \"User\" WHERE login='" + login + "';");
             return true;
         }
-
-
     }
 }

@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace ClientBD.GetSendDataModule
 {
-    class ClienServerBridge : IClientServerBridge
+    class ClientServerBridge : IClientServerBridge
     {
+
         public OutcomeData GetResult(string querry)
         {
+
             throw new NotImplementedException();
         }
+
+
     }
 }
