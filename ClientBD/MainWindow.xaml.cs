@@ -27,10 +27,13 @@ namespace ClientBD
 
         private void btn_login_Click(object sender, RoutedEventArgs e)
         {
-            if (new Authorization.AuthModule().CheckAuthData(tb_login.Text, pb_password.Password))
+            if (!new InterfaceHandler.FormsChecker().IsWindowOK(this))
+                MessageBox.Show("Вы заполнили не все поля, либо допустили ошибку при вводе");
+            else if (new Authorization.AuthModule().CheckAuthData(tb_login.Text, pb_password.Password))
             {
                 var mainForm = new Forms.MainForm();
                 mainForm.Show();
+               // this.Hide();
             }
             else
                 MessageBox.Show("Ошибка авторизации", "Ошибка");

@@ -11,8 +11,8 @@ namespace ClientBD.Authorization
         public bool CheckAuthData(string login, string pass)
         {
             var reader = new GetSendDataModule.PostgresModules.Postgres();
-            reader.Read("SELECT password FROM \"User\" WHERE login='" + login + "';");
-            return true;
+            var dbpass = reader.Read("SELECT password FROM \"Users\" WHERE login='" + login +  "';");
+            return Encryption.Encryption.BCryptHandler.ValidatePassword(pass, dbpass);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace ClientBD.GetSendDataModule.PostgresModules
         {
             Host = "127.0.0.1";
             User = "postgres";
-            DBname = "Users";
+            DBname = "MineDB";
             Password = "9370lambor";
             Port = "5432";
 

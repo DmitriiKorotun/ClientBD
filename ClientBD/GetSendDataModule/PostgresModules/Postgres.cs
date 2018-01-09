@@ -33,6 +33,7 @@ namespace ClientBD.GetSendDataModule.PostgresModules
 
         public string Read(string commandText)
         {
+            var result = "";
             var connection = new NpgsqlConnection();
             Connect(out connection);
             var command = connection.CreateCommand();
@@ -41,18 +42,16 @@ namespace ClientBD.GetSendDataModule.PostgresModules
             var reader = command.ExecuteReader();
             while (reader.Read())
             {
-                //Console.WriteLine(
-                //    string.Format(
-                //        "Reading from table=({0}, {1}, {2})",
-                //        reader.GetInt32(0).ToString(),
-                //        reader.GetString(1),
-                //        reader.GetInt32(2).ToString()
-                //        )
-                //    );
+                var i = 0;
+                while (i < reader.FieldCount)
+                {
+                    result += reader.GetString(i);
+                    ++i;
+                }
             }
 
             CloseConnection(connection);
-            return "";
+            return result;
         }
     }
 }
