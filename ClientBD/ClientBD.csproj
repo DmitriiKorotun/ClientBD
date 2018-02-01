@@ -75,6 +75,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FormHandler\IWindowCreator.cs" />
+    <Compile Include="FormHandler\WindowCreator.cs" />
     <Compile Include="Forms\AddEditRecord.xaml.cs">
       <DependentUpon>AddEditRecord.xaml</DependentUpon>
     </Compile>
@@ -150,8 +152,6 @@
   <ItemGroup>
     <Resource Include="LICENSE.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="FormHandler\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

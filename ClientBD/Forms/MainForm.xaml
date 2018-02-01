@@ -44,6 +44,10 @@
                     <MenuItem Header="Изменить запись" Width="auto" Height="auto"/>
                     <MenuItem Header="Удалить запись" Width="auto" Height="auto"/>
                 </MenuItem>
+                <MenuItem Header="Таблицы">
+                    <MenuItem Header="Страны" Width="auto" Height="auto"/>
+                    <MenuItem Header="Добыча" Width="auto" Height="auto"/>
+                </MenuItem>
             </Menu>
         </DockPanel>
 
