@@ -8,11 +8,15 @@ namespace ClientBD.Authorization
 {
     class AuthModule : IAuthModule
     {
-        public bool CheckAuthData(string login, string pass)
+        public bool CheckAuthData(string login, string password)
         {
-            var reader = new GetSendDataModule.PostgresModules.Postgres();
-            var dbpass = reader.Read("SELECT password FROM \"Users\" WHERE login='" + login +  "';");
-            return Encryption.Encryption.BCryptHandler.ValidatePassword(pass, dbpass);
+            var authHandler =
+                new GetSendDataModule.PostgresModules.PostgresAuthenticationHandler();
+
+            var result =
+                authHandler.CheckLoginPass(login, password);
+
+            return result;
         }
     }
 }

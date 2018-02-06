@@ -9,21 +9,21 @@ namespace ClientBD.GetSendDataModule.PostgresModules
 {
     class Postgres
     {
-        bool Connect(out NpgsqlConnection connection)
-        {
-            try
-            {
-                connection = new NpgsqlConnection(new ConnectionString().GetConnectionString());
-                Console.Out.WriteLine("Opening connection");
-                connection.Open();
-                return true;
-            }
-            catch (ArgumentException e)
-            {
-                connection = null;
-                return false;
-            }
-        }
+        //bool Connect(out NpgsqlConnection connection)
+        //{
+        //    try
+        //    {
+        //        connection = new NpgsqlConnection(new ConnectionStringsHandler().GetConnectionString());
+        //        Console.Out.WriteLine("Opening connection");
+        //        connection.Open();
+        //        return true;
+        //    }
+        //    catch (ArgumentException e)
+        //    {
+        //        connection = null;
+        //        return false;
+        //    }
+        //}
 
         bool CloseConnection(NpgsqlConnection connection)
         {
@@ -35,7 +35,7 @@ namespace ClientBD.GetSendDataModule.PostgresModules
         {
             var result = "";
             var connection = new NpgsqlConnection();
-            Connect(out connection);
+            //Connect(out connection);
             var command = connection.CreateCommand();
             command.CommandText = commandText;
 
