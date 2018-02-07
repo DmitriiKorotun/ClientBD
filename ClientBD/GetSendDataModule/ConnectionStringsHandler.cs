@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 
-namespace ClientBD.GetSendDataModule.PostgresModules
+namespace ClientBD.GetSendDataModule
 {
     class ConnectionStringsHandler : Interfaces.IConnectionStringsHandler
     {
