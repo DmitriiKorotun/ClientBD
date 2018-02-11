@@ -7,16 +7,23 @@ using System.Threading.Tasks;
 
 namespace ClientBD.Core.Repositories
 {
+    public interface IUnitOfWork
+    {
+        void MarkDirty(object entity);
+        void MarkNew(object entity);
+        void MarkDeleted(object entity);
+        void Commit();
+        void Rollback();
+    }
+
     public interface IRepository<TEntity> where TEntity: class
     {
-        TEntity Get(int id);
+        TEntity GetById(int id);
         IEnumerable<TEntity> GetAll();
-        IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
+      //  IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
 
-        void Add(TEntity entity);
-        void AddRange(IEnumerable<TEntity> entities);
-
-        void Remove(TEntity entity);
-        void RemoveRange(IEnumerable<TEntity> entites);
+        void Create(TEntity entity);
+        void Update(TEntity entity);
+        void Delete(int id);
     }
 }

@@ -7,7 +7,7 @@ using ClientBD.Entities.ReferenceTables;
 
 namespace ClientBD.Entities
 {
-    class Field : Entity
+    public class Field : Entity
     {
         public string Name { get; set; }
         public Country FieldCountry { get; set; }

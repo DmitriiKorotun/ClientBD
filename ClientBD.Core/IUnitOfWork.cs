@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ClientBD.Core
 {
-    public interface IUnitOfWork
+
+    public interface IUnitOfWork : IDisposable
     {
+        void Commit();
+
     }
 }
