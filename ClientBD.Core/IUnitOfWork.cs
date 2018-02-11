@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClientBD.GetSendDataModule
+namespace ClientBD.Core
 {
-    interface IClientServerBridge
+
+    public interface IUnitOfWork : IDisposable
     {
-        OutcomeData GetResult(string querry);
+        void Commit();
+
     }
 }

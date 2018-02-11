@@ -34,8 +34,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.5073.29922, Culture=neutral, PublicKeyToken=6bcd409ee6bc9292, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt-Official.0.1.109\lib\BCrypt.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=3.2.6.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.3.2.6\lib\net451\Npgsql.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -66,9 +76,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FormHandler\IWindowCreator.cs" />
+    <Compile Include="FormHandler\WindowCreator.cs" />
     <Compile Include="Forms\AddEditRecord.xaml.cs">
       <DependentUpon>AddEditRecord.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GetSendDataModule\ConnectionStringsHandler.cs" />
+    <Compile Include="GetSendDataModule\Interfaces\IAuthenticationHandler.cs" />
+    <Compile Include="GetSendDataModule\Interfaces\IConnectionStringsHandler.cs" />
+    <Compile Include="GetSendDataModule\PostgresModules\Postgres.cs" />
+    <Compile Include="GetSendDataModule\PostgresModules\PostgresAuthenticationHandler.cs" />
+    <Compile Include="InterfaceHandler\FieldHandler.cs" />
+    <Compile Include="InterfaceHandler\FormsChecker.cs" />
+    <Compile Include="InterfaceHandler\TableFiller.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -99,14 +119,6 @@
     <Compile Include="Forms\QuerryResultsForm.xaml.cs">
       <DependentUpon>QuerryResultsForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GetSendDataModule\ClienServerBridge.cs" />
-    <Compile Include="GetSendDataModule\Interfaces\IClientServerBridge.cs" />
-    <Compile Include="GetSendDataModule\Interfaces\IIncomingDataHandler.cs" />
-    <Compile Include="GetSendDataModule\IncomingData.cs" />
-    <Compile Include="GetSendDataModule\IncomingDataHandler.cs" />
-    <Compile Include="GetSendDataModule\Interfaces\IQuerryMaker.cs" />
-    <Compile Include="GetSendDataModule\QuerryMaker.cs" />
-    <Compile Include="GetSendDataModule\OutcomeData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -124,13 +136,18 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Config\connections.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Config\app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LICENSE.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

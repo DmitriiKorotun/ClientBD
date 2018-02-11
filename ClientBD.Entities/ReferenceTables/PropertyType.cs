@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClientBD.GetSendDataModule
+namespace ClientBD.Entities.ReferenceTables
 {
-    class OutcomeData
+    class PropertyType : ReferenceEntity
     {
     }
 }

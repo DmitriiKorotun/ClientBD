@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClientBD.GetSendDataModule
+namespace ClientBD.Entities.ReferenceTables
 {
-    interface IIncomingDataHandler
+    class Rock : ReferenceEntity
     {
-        OutcomeData ParseInfo(IncomingData data);
+        public RockType Type { get; set; }
     }
 }

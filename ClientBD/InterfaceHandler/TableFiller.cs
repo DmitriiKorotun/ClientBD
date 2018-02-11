@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
-namespace ClientBD.GetSendDataModule
+namespace ClientBD.InterfaceHandler
 {
-    interface IQuerryMaker
+    class TableFiller
     {
-        string MakeQuerry(string rawQuerry);
+        //public FillTable(DataGrid )
     }
 }

@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace ClientBD.GetSendDataModule.Interfaces
 {
-    class QuerryMaker : IQuerryMaker
+    interface IConnectionStringsHandler
     {
-        public string MakeQuerry(string rawQuerry)
-        {
-            throw new NotImplementedException();
-        }
+        string GetConnectionStringByName(string name);
     }
 }
