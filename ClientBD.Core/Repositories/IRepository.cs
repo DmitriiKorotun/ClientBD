@@ -14,6 +14,8 @@ namespace ClientBD.Core.Repositories
         void MarkDeleted(object entity);
         void Commit();
         void Rollback();
+        //FOR TEST
+        void TEST();
     }
 
     public interface IRepository<TEntity> where TEntity: class
